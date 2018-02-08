@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sistema de Locadora</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Sistema de Locadora", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Cadastro
+                            <span class="caret"> </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Filme", "Filme", "Cadastro")</li>
+                            <li>@Html.ActionLink("Cliente", "Cliente", "Cadastro")</li>
+                            <li class="divider"> </li>
+                            <li>@Html.ActionLink("Perfil de Usuario", "PerfilUsuario", "Cadastro")</li>
+                            <li>@Html.ActionLink("Usuario", "Usuario", "Cadastro")</li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Alocação
+                            <span class="caret"> </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Alugar Filme", "AlugaFilme", "Alocacao")</li>
+                            <li>@Html.ActionLink("Lançamento de Perdas", "LancaPerda", "Alocacao")</li>
+                            <li>@Html.ActionLink("Inventário de Filmes", "InventariaEstoque", "Alocacao")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Relatorio
+                            <span class="caret"> </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Top Filmes", "TopFilmes", "Relatorio")</li>
+                            <li>@Html.ActionLink("Perdas", "Perdas", "Relatorio")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Gráficos
+                            <span class="caret"> </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Alocação por mes", "AlocacaoMes", "Grafico")</li>
+                            <li>@Html.ActionLink("Perdas por Mes", "PerdaMes", "Grafico")</li>
+                            <li>@Html.ActionLink("Faturamento por Mes", "FaturamentoMes", "Grafico")</li>
+                        </ul>
+                    </li>
+                    <li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>  
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Sistema de Locadora</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
